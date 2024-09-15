@@ -1,26 +1,3 @@
-import sqlite3
-
-# Connect to the SQLite database
-conn = sqlite3.connect('socialbot.db')
-
-# Create a cursor object
-cursor = conn.cursor()
-
-# Create the 'userss' table (if it doesn't already exist)
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS userss (
-    id INTEGER PRIMARY KEY,
-    name TEXT,
-    section TEXT,
-    score INTEGER
-)
-''')
-
-# Commit the changes and close the connection
-conn.commit()
-conn.close()
-
-
 import telebot
 import sqlite3
 
